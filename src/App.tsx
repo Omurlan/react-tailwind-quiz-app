@@ -1,9 +1,7 @@
+import SplashScreen from './components/splash-screen'
+
 function App() {
-  return (
-    <>
-      <h1>React Quiz App</h1>
-    </>
-  )
+  return <SplashScreen />
 }
 
 export default App
