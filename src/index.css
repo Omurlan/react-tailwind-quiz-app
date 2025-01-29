@@ -1,1 +1,9 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+@theme {
+  --theme-gradient: linear-gradient(to right, #800080, #ffc0cb);
+}
+
+@utility theme-* {
+  background-image: --value(--theme- *);
+}

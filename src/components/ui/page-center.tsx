@@ -8,7 +8,7 @@ interface PageCenterProps {
 const PageCenter: FC<PageCenterProps> = ({ justifyCenter, children }) => {
   return (
     <div
-      className={`flex min-h-screen flex-col items-center bg-[#E5E5E5] p-5 pt-12 dark:bg-gradient-to-r dark:from-[#800080] dark:to-[#FFC0CB] ${justifyCenter ? 'justify-center' : ''}`}
+      className={`theme-gradient flex min-h-screen flex-col items-center p-5 pt-12 ${justifyCenter ? 'justify-center' : ''}`}
     >
       {children}
     </div>
