@@ -1,9 +1,42 @@
 @import 'tailwindcss';
 
 @theme {
-  --theme-gradient: linear-gradient(to right, #800080, #ffc0cb);
+  --color-card-light: #fff;
+  --color-card-dark: #241a1a;
+  --color-theme-light: #800080;
+  --color-theme-dark: #c000c0;
+  --color-disabled-button-light: #e7e8e9;
+  --color-disabled-button-dark: #181214;
+  --color-dark-grey: #9fa3a9;
+
+  --shadow-active: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
 
-@utility theme-* {
-  background-image: --value(--theme- *);
+@utility theme-gradient {
+  background-image: linear-gradient(to right, #800080, #ffc0cb);
+
+  @variant dark {
+    background-image: linear-gradient(90deg, #0e050e 0%, #281e20 100%);
+  }
+}
+
+@utility button-background {
+  background-image: linear-gradient(90.04deg, #800080 0.03%, #ffc0cb 99.96%);
+}
+
+body {
+  overflow-x: hidden;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  /* font-family: ${({ theme }) => theme.fonts.anekMalayalam}, sans-serif; */
+  font-size: 1rem;
+  color: black;
+  background: #e5e5e5;
+  line-height: 1;
+  position: relative;
+
+  @variant dark {
+    color: white;
+    background: linear-gradient(90deg, #0e050e 0%, #281e20 100%);
+  }
 }

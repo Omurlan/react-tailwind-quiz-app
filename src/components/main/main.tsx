@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useQuiz } from '../../contexts/quiz-context'
 import { ScreenTypes } from '../../types'
 import SplashScreen from '../splash-screen'
+import QuizTopicsScreen from '../quiz-topics-screen'
 
 // import QuestionScreen from '../QuestionScreen'
 // import QuizDetailsScreen from '../QuizDetailsScreen'
@@ -11,15 +12,15 @@ import SplashScreen from '../splash-screen'
 const Main = () => {
   const { currentScreen, setCurrentScreen } = useQuiz()
 
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setCurrentScreen(ScreenTypes.QuizTopicsScreen)
-  //   }, 1000)
-  // }, [setCurrentScreen])
+  useEffect(() => {
+    setTimeout(() => {
+      setCurrentScreen(ScreenTypes.QuizTopicsScreen)
+    }, 1000)
+  }, [setCurrentScreen])
 
   const screenComponents = {
     [ScreenTypes.SplashScreen]: <SplashScreen />,
-    // [ScreenTypes.QuizTopicsScreen]: <QuizTopicsScreen />,
+    [ScreenTypes.QuizTopicsScreen]: <QuizTopicsScreen />,
     // [ScreenTypes.QuizDetailsScreen]: <QuizDetailsScreen />,
     // [ScreenTypes.QuestionScreen]: <QuestionScreen />,
     // [ScreenTypes.ResultScreen]: <ResultScreen />,
