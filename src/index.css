@@ -2,12 +2,9 @@
 @import './styles/fonts.module.css';
 
 @theme {
-  --color-card-light: #fff;
-  --color-card-dark: #241a1a;
-  --color-theme-light: #800080;
-  --color-theme-dark: #c000c0;
-  --color-disabled-button-light: #e7e8e9;
-  --color-disabled-button-dark: #181214;
+  --color-card: #fff;
+  --color-theme: #800080;
+  --color-disabled-button: #e7e8e9;
   --color-dark: #282526;
   --color-dark-grey: #9fa3a9;
 
@@ -18,10 +15,6 @@
 
 @utility theme-gradient {
   background-image: linear-gradient(to right, #800080, #ffc0cb);
-
-  @variant dark {
-    background-image: linear-gradient(90deg, #0e050e 0%, #281e20 100%);
-  }
 }
 
 @utility button-background {
@@ -38,9 +31,4 @@ body {
   background: #e5e5e5;
   line-height: 1;
   position: relative;
-
-  @variant dark {
-    color: white;
-    background: linear-gradient(90deg, #0e050e 0%, #281e20 100%);
-  }
 }
