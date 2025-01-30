@@ -1,14 +1,15 @@
 import { FC, ReactNode } from 'react'
 
 interface PageCenterProps {
+  light?: boolean
   justifyCenter?: boolean
   children: ReactNode
 }
 
-const PageCenter: FC<PageCenterProps> = ({ justifyCenter, children }) => {
+const PageCenter: FC<PageCenterProps> = ({ light, justifyCenter, children }) => {
   return (
     <div
-      className={`theme-gradient flex min-h-screen flex-col items-center p-5 pt-12 ${justifyCenter ? 'justify-center' : ''}`}
+      className={`${light ? 'bg-[#E5E5E5]' : 'theme-gradient'} flex min-h-screen flex-col items-center p-5 pt-12 ${justifyCenter ? 'justify-center' : ''}`}
     >
       {children}
     </div>

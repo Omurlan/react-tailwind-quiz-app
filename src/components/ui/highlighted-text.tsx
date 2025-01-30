@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
 interface HighlightedTextProps {
-  children: string
+  children: string | number
 }
 
 const HighlightedText: FC<HighlightedTextProps> = ({ children }) => {
