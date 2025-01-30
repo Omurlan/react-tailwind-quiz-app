@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from 'react'
 import { useQuiz } from '../../contexts/quiz-context'
 import useTimer from '../../hooks/useTimer'
 import { ScreenTypes } from '../../types'
-import { CheckIcon, Next, TimerIcon } from '../../utils/icons'
+import { CheckIcon, RightArrowIcon, TimerIcon } from '../../utils/icons'
 import Button from '../ui/button'
 import ModalWrapper from '../ui/modal-wrapper'
 import PageCenter from '../ui/page-center'
@@ -101,7 +101,7 @@ const QuestionScreen: FC = () => {
           <Button
             text={activeQuestion === questions.length - 1 ? 'Finish' : 'Next'}
             onClick={onClickNext}
-            icon={<Next />}
+            icon={<RightArrowIcon />}
             iconPosition="right"
             disabled={selectedAnswer.length === 0}
           />

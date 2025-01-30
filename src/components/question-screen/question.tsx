@@ -31,7 +31,7 @@ const Question: FC<QuestionTypes> = ({
       {code && <CodeSnippet code={code} language="javascript" />}
       {/* if question contains an image */}
       {image && <QuizImage image={image} />}
-      <div className="max-h-full md:max-w-[78%]">
+      <div className="max-h-full">
         {choices.map((choice, index) => (
           <Answer
             key={index}

@@ -4,8 +4,7 @@
 @theme {
   --color-primary: #11052c;
   --color-secondary: #2d264b;
-  --color-border: #eaeaea;
-  --color-selected-answer: #ffd6ff;
+  --color-border: #d9d9d9;
   --color-card: #fff;
   --color-theme: #fe843d;
   --color-disabled-button: #e7e8e9;
