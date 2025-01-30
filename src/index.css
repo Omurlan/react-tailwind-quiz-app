@@ -2,11 +2,16 @@
 @import './styles/fonts.module.css';
 
 @theme {
+  --color-primary: #11052c;
+  --color-secondary: #2d264b;
+  --color-border: #eaeaea;
+  --color-selected-answer: #ffd6ff;
   --color-card: #fff;
   --color-theme: #fe843d;
   --color-disabled-button: #e7e8e9;
   --color-dark: #282526;
   --color-dark-grey: #9fa3a9;
+  --color-secondary-bg: #f2f2f2;
 
   --shadow-active: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 

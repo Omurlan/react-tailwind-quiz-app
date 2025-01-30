@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useQuiz } from '../../contexts/quiz-context'
 import { ScreenTypes } from '../../types'
+import QuestionScreen from '../question-screen'
 import QuizDetailsScreen from '../quiz-details-screen'
 import QuizTopicsScreen from '../quiz-topics-screen'
 import SplashScreen from '../splash-screen'
@@ -23,7 +24,7 @@ const Main = () => {
     [ScreenTypes.SplashScreen]: <SplashScreen />,
     [ScreenTypes.QuizTopicsScreen]: <QuizTopicsScreen />,
     [ScreenTypes.QuizDetailsScreen]: <QuizDetailsScreen />,
-    // [ScreenTypes.QuestionScreen]: <QuestionScreen />,
+    [ScreenTypes.QuestionScreen]: <QuestionScreen />,
     // [ScreenTypes.ResultScreen]: <ResultScreen />,
   }
 
