@@ -28,8 +28,6 @@ const Main = () => {
 
   /*
    * todo:
-      splash screen svg //
-      toggle theme button //
       setup ui according to figma
    */
 
