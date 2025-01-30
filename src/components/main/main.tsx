@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 import { useQuiz } from '../../contexts/quiz-context'
 import { ScreenTypes } from '../../types'
-import SplashScreen from '../splash-screen'
 import QuizTopicsScreen from '../quiz-topics-screen'
+import SplashScreen from '../splash-screen'
 
 // import QuestionScreen from '../QuestionScreen'
 // import QuizDetailsScreen from '../QuizDetailsScreen'
@@ -25,6 +25,14 @@ const Main = () => {
     // [ScreenTypes.QuestionScreen]: <QuestionScreen />,
     // [ScreenTypes.ResultScreen]: <ResultScreen />,
   }
+
+  /*
+   * todo:
+      splash screen svg //
+      toggle theme button //
+      font in body
+      setup ui according to figma
+   */
 
   const ComponentToRender = screenComponents[currentScreen] || <SplashScreen />
 
