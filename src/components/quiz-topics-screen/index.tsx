@@ -21,7 +21,7 @@ const QuizTopicsScreen: React.FC = () => {
         <LogoContainer>
           <AppLogo />
         </LogoContainer>
-        <h2 className="mb-5 text-center text-3xl font-bold">
+        <h2 className="mb-5 text-center text-[32px] font-bold">
           WELCOME TO <HighlightedText> XEVEN QUIZ</HighlightedText>
         </h2>
         <p className="text-center text-xl leading-7 font-medium">
