@@ -7,7 +7,12 @@ interface LogoAnimationProps {
 
 const LogoAnimation: FC<LogoAnimationProps> = ({ logoSize, children }) => {
   return (
-    <div style={{ width: 80, scale: logoSize, transition: 'scale 1s' }}>{children}</div>
+    <div
+      className="flex items-center gap-[10px]"
+      style={{ width: 'fit-content', scale: logoSize, transition: 'scale 1s' }}
+    >
+      {children}
+    </div>
   )
 }
 

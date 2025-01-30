@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { AppLogo } from '../../utils/icons'
+import { AppLogoBlack } from '../../utils/icons'
 import LogoAnimation from '../ui/logo-animation'
 import PageCenter from '../ui/page-center'
 
@@ -12,7 +12,7 @@ const SplashScreen = () => {
       if (window.innerWidth < 900) {
         setLogoSize(3)
       } else {
-        setLogoSize(4.5)
+        setLogoSize(4)
       }
     }
 
@@ -31,7 +31,8 @@ const SplashScreen = () => {
   return (
     <PageCenter justifyCenter>
       <LogoAnimation logoSize={logoSize}>
-        <AppLogo />
+        <AppLogoBlack />
+        <h1 className="text-[10px] font-bold">XEVEN QUIZ</h1>
       </LogoAnimation>
     </PageCenter>
   )
