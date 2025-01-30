@@ -41,10 +41,6 @@ const QuizDetailsScreen = () => {
           <DetailText>
             Total time: <HighlightedText>{convertSeconds(totalTime)}</HighlightedText>
           </DetailText>
-          <DetailText>
-            To save time, you can skip questions. Skipped questions will show up at the
-            end of the quiz.
-          </DetailText>
         </div>
         <Button
           text="Start"
