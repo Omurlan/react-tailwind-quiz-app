@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import Checkbox from '../ui/checkbox'
 import RadioButton from '../ui/radio-button'
 
 interface AnswerProps {
@@ -10,7 +11,7 @@ interface AnswerProps {
 }
 
 const Answer: FC<AnswerProps> = ({ onChange, index, choice, type, selectedAnswer }) => {
-  // Convert index to alphabet character to show ABCD before question
+  // Convert index to alphabet character to show 'abcd' before question
   const label = String.fromCharCode(97 + index)
 
   return (
@@ -19,7 +20,11 @@ const Answer: FC<AnswerProps> = ({ onChange, index, choice, type, selectedAnswer
     >
       <label className="flex cursor-pointer gap-2 p-4 text-lg font-semibold">
         {type === 'MAQs' ? (
-          'checkbox'
+          <Checkbox
+            name={choice}
+            checked={selectedAnswer.includes(choice)}
+            handleChange={onChange}
+          />
         ) : (
           <RadioButton
             name={choice}
