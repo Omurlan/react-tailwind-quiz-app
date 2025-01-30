@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import RadioButton from '../ui/radio-button'
 
 interface AnswerProps {
   index: number
@@ -16,16 +17,18 @@ const Answer: FC<AnswerProps> = ({ onChange, index, choice, type, selectedAnswer
     <div
       className={`text-secondary mt-[clamp(13px,calc(10px+6*((100vw-600px)/1320)),16px)] cursor-pointer border-b text-[clamp(18px,4vw,16px)] ${selectedAnswer.includes(choice) ? 'border-theme rounded bg-white transition-all duration-[200] ease-in' : 'border-border'}`}
     >
-      <label className="flex cursor-pointer p-4 text-lg font-semibold">
+      <label className="flex cursor-pointer gap-2 p-4 text-lg font-semibold">
+        {type === 'MAQs' ? (
+          'checkbox'
+        ) : (
+          <RadioButton
+            name={choice}
+            value={choice}
+            checked={selectedAnswer.includes(choice)}
+            onChange={onChange}
+          />
+        )}
         <span>{label}&#41;</span>
-        <input
-          name={choice}
-          className="invisible m-0"
-          // radio is for checked one option and checkbox is for checked multiple options
-          type={type === 'MAQs' ? 'checkbox' : 'radio'}
-          checked={selectedAnswer.includes(choice)}
-          onChange={onChange}
-        />
         {choice}
       </label>
     </div>
