@@ -4,12 +4,8 @@ import { ScreenTypes } from '../../types'
 import QuestionScreen from '../question-screen'
 import QuizDetailsScreen from '../quiz-details-screen'
 import QuizTopicsScreen from '../quiz-topics-screen'
+import ResultScreen from '../result-screen'
 import SplashScreen from '../splash-screen'
-
-// import QuestionScreen from '../QuestionScreen'
-// import QuizDetailsScreen from '../QuizDetailsScreen'
-// import QuizTopicsScreen from '../QuizTopicsScreen'
-// import ResultScreen from '../ResultScreen'
 
 const Main = () => {
   const { currentScreen, setCurrentScreen } = useQuiz()
@@ -25,13 +21,8 @@ const Main = () => {
     [ScreenTypes.QuizTopicsScreen]: <QuizTopicsScreen />,
     [ScreenTypes.QuizDetailsScreen]: <QuizDetailsScreen />,
     [ScreenTypes.QuestionScreen]: <QuestionScreen />,
-    // [ScreenTypes.ResultScreen]: <ResultScreen />,
+    [ScreenTypes.ResultScreen]: <ResultScreen />,
   }
-
-  /*
-   * todo:
-      setup ui according to figma
-   */
 
   const ComponentToRender = screenComponents[currentScreen] || <SplashScreen />
 

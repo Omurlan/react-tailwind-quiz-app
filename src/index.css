@@ -10,7 +10,12 @@
   --color-disabled-button: #e7e8e9;
   --color-dark: #282526;
   --color-dark-grey: #9fa3a9;
+  --color-darker-grey: #817a8e;
   --color-secondary-bg: #f2f2f2;
+  --color-success: #12b40e;
+  --color-success-light: #ddffdc;
+  --color-danger: #ff143e;
+  --color-danger-light: #ffd7de;
 
   --shadow-active: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 

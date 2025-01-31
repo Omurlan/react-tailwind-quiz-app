@@ -16,9 +16,9 @@ const Answer: FC<AnswerProps> = ({ onChange, index, choice, type, selectedAnswer
 
   return (
     <div
-      className={`text-secondary mt-[clamp(13px,calc(10px+6*((100vw-600px)/1320)),16px)] cursor-pointer border-b text-[clamp(18px,4vw,16px)] ${selectedAnswer.includes(choice) ? 'border-theme rounded bg-white transition-all duration-[200] ease-in' : 'border-border'}`}
+      className={`text-secondary mt-[clamp(13px,calc(10px+6*((100vw-600px)/1320)),16px)] cursor-pointer border-b text-[clamp(18px,4vw,16px)] ${selectedAnswer.includes(choice) ? 'border-theme rounded bg-white font-semibold transition-all duration-[200] ease-in' : 'border-border'}`}
     >
-      <label className="flex cursor-pointer gap-2 p-4 text-lg font-semibold">
+      <label className="grid cursor-pointer grid-cols-[min-content_min-content_1fr] gap-2 p-4 text-lg">
         {type === 'MAQs' ? (
           <Checkbox
             name={choice}
