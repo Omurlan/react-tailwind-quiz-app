@@ -12,7 +12,7 @@ interface SidebarProps {
 
 const Sidebar: FC<SidebarProps> = ({ questions, activeQuestion, totalQuestions }) => {
   return (
-    <div className="sticky top-0 flex h-dvh w-[330px] flex-col gap-12 overflow-hidden bg-white p-6 backdrop-blur-sm [mask:linear-gradient(black,black,transparent)]">
+    <div className="sticky top-0 flex h-dvh w-[330px] flex-col gap-12 overflow-hidden bg-white p-6 backdrop-blur-sm [mask:linear-gradient(black,black,black,transparent)]">
       <div className="mt-4 flex items-center justify-center gap-1.5 [&>svg]:h-[50px] [&>svg]:w-[55px]">
         <AppLogoBlack />
         <h1 className="text-center text-2xl font-bold">XEVEN QUIZ</h1>
@@ -23,15 +23,17 @@ const Sidebar: FC<SidebarProps> = ({ questions, activeQuestion, totalQuestions }
         content={`${addLeadingZero(activeQuestion + 1)}/${addLeadingZero(totalQuestions)}`}
       />
 
-      <ol className="space-y-2 px-4">
-        {questions.map(({ question }, index) => (
-          <li
-            key={question}
-            className={`${activeQuestion === index ? 'text-theme' : ''} list-decimal pl-1 text-base`}
-          >
-            {question}
-          </li>
-        ))}
+      <ol start={activeQuestion + 1} className="space-y-2 px-4">
+        {questions
+          .filter((_, index) => index >= activeQuestion)
+          .map(({ question }, index) => (
+            <li
+              key={question}
+              className={`${index === 0 ? 'text-theme' : ''} list-decimal pl-1 text-base`}
+            >
+              {question}
+            </li>
+          ))}
       </ol>
     </div>
   )
