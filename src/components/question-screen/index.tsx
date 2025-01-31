@@ -2,8 +2,10 @@ import { FC, useEffect, useState } from 'react'
 import { useQuiz } from '../../contexts/quiz-context'
 import useTimer from '../../hooks/useTimer'
 import { ScreenTypes } from '../../types'
-import { CheckIcon, RightArrowIcon, TimerIcon } from '../../utils/icons'
+import { addLeadingZero } from '../../utils/helpers'
+import { AppLogoBlack, CheckIcon, RightArrowIcon, TimerIcon } from '../../utils/icons'
 import Button from '../ui/button'
+import { CircularProgress } from '../ui/circular-progress'
 import ModalWrapper from '../ui/modal-wrapper'
 import PageCenter from '../ui/page-center'
 import Question from './question'
@@ -85,8 +87,16 @@ const QuestionScreen: FC = () => {
 
   return (
     <div className="grid grid-cols-4">
-      <div className="col-span-1 bg-white">
-        // TODO
+      <div className="sticky top-0 col-span-1 flex h-dvh flex-col gap-16 overflow-hidden bg-white p-4">
+        <div className="mt-6 flex items-center justify-center gap-1.5 [&>svg]:h-[50px] [&>svg]:w-[55px]">
+          <AppLogoBlack />
+          <h1 className="text-center text-2xl font-bold">XEVEN QUIZ</h1>
+        </div>
+
+        <CircularProgress
+          progress={((activeQuestion + 1) / quizDetails.totalQuestions) * 100}
+          content={`${addLeadingZero(activeQuestion + 1)}/${addLeadingZero(quizDetails.totalQuestions)}`}
+        />
       </div>
 
       <div className="col-span-3">
