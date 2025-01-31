@@ -84,41 +84,49 @@ const QuestionScreen: FC = () => {
   useTimer(timer, quizDetails, setEndTime, setTimer, setShowTimerModal, showResultModal)
 
   return (
-    <PageCenter light>
-      <div
-        className={`relative mb-18 min-h-[500px] w-full rounded px-4 pt-4 pb-20 md:w-[900px] md:px-16 md:pt-8 ${selectedAnswer.length > 0}`}
-      >
-        <Question
-          question={question}
-          code={code}
-          image={image}
-          choices={choices}
-          type={type}
-          handleAnswerSelection={handleAnswerSelection}
-          selectedAnswer={selectedAnswer}
-        />
-        <div className="flex w-[90%] justify-center gap-5 md:w-auto">
-          <Button
-            text={activeQuestion === questions.length - 1 ? 'Finish' : 'Next'}
-            onClick={onClickNext}
-            icon={<RightArrowIcon />}
-            iconPosition="right"
-            disabled={selectedAnswer.length === 0}
-          />
-        </div>
+    <div className="grid grid-cols-4">
+      <div className="col-span-1 bg-white">
+        // TODO
       </div>
 
-      {/* timer or finish quiz modal*/}
-      {(showTimerModal || showResultModal) && (
-        <ModalWrapper
-          title={showResultModal ? 'Done!' : 'Your time is up!'}
-          subtitle={`You have attempted ${result.length} questions in total.`}
-          onClick={handleModal}
-          icon={showResultModal ? <CheckIcon /> : <TimerIcon />}
-          buttonTitle="SHOW RESULT"
-        />
-      )}
-    </PageCenter>
+      <div className="col-span-3">
+        <PageCenter light justifyCenter>
+          <div
+            className={`relative mb-18 min-h-[500px] w-full rounded px-4 pt-4 pb-20 md:w-[900px] md:px-16 md:pt-8 ${selectedAnswer.length > 0}`}
+          >
+            <Question
+              question={question}
+              code={code}
+              image={image}
+              choices={choices}
+              type={type}
+              handleAnswerSelection={handleAnswerSelection}
+              selectedAnswer={selectedAnswer}
+            />
+            <div className="flex w-[90%] justify-center gap-5 md:w-auto">
+              <Button
+                text={activeQuestion === questions.length - 1 ? 'Finish' : 'Next'}
+                onClick={onClickNext}
+                icon={<RightArrowIcon />}
+                iconPosition="right"
+                disabled={selectedAnswer.length === 0}
+              />
+            </div>
+          </div>
+
+          {/* timer or finish quiz modal*/}
+          {(showTimerModal || showResultModal) && (
+            <ModalWrapper
+              title={showResultModal ? 'Done!' : 'Your time is up!'}
+              subtitle={`You have attempted ${result.length} questions in total.`}
+              onClick={handleModal}
+              icon={showResultModal ? <CheckIcon /> : <TimerIcon />}
+              buttonTitle="SHOW RESULT"
+            />
+          )}
+        </PageCenter>
+      </div>
+    </div>
   )
 }
 

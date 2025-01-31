@@ -24,7 +24,7 @@ const Checkbox: React.FC<PropsType> = ({
         onChange={handleChange}
         checked={checked}
         disabled={disabled}
-        className="size-5 transform cursor-pointer appearance-none rounded border border-[#CFD1D5] bg-white transition duration-[120ms] ease-in-out checked:border-none checked:border-[#E7851A] checked:bg-[#E7851A] disabled:cursor-not-allowed disabled:opacity-50"
+        className="checked:border-theme checked:bg-theme size-5 transform cursor-pointer appearance-none rounded border border-[#CFD1D5] bg-white transition duration-[120ms] ease-in-out checked:border-none disabled:cursor-not-allowed disabled:opacity-50"
         aria-checked={checked}
       />
       {checked && (
