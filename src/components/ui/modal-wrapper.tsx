@@ -1,4 +1,5 @@
 import { FC, ReactNode } from 'react'
+import { RightArrowIcon } from '../../utils/icons'
 import Button from './button'
 
 interface ModalWrapperProps {
@@ -24,7 +25,14 @@ const ModalWrapper: FC<ModalWrapperProps> = ({
         <p className="text-primary mb-[clamp(18px,calc(18px+28*((100vw-600px)/1320)),48px)] text-center text-2xl text-[clamp(18px,4vw,24px)] leading-[1.3] font-medium">
           {subtitle}
         </p>
-        <Button text={buttonTitle} onClick={onClick} bold big />
+        <Button
+          text={buttonTitle}
+          icon={<RightArrowIcon />}
+          iconPosition="right"
+          onClick={onClick}
+          bold
+          big
+        />
       </div>
     </div>
   )

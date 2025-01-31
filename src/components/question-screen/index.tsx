@@ -2,13 +2,12 @@ import { FC, useEffect, useState } from 'react'
 import { useQuiz } from '../../contexts/quiz-context'
 import useTimer from '../../hooks/useTimer'
 import { ScreenTypes } from '../../types'
-import { addLeadingZero } from '../../utils/helpers'
-import { AppLogoBlack, CheckIcon, RightArrowIcon, TimerIcon } from '../../utils/icons'
+import { CheckIcon, RightArrowIcon, TimerIcon } from '../../utils/icons'
 import Button from '../ui/button'
-import { CircularProgress } from '../ui/circular-progress'
 import ModalWrapper from '../ui/modal-wrapper'
 import PageCenter from '../ui/page-center'
 import Question from './question'
+import Sidebar from './sidebar'
 
 const QuestionScreen: FC = () => {
   const [activeQuestion, setActiveQuestion] = useState<number>(0)
@@ -86,56 +85,48 @@ const QuestionScreen: FC = () => {
   useTimer(timer, quizDetails, setEndTime, setTimer, setShowTimerModal, showResultModal)
 
   return (
-    <div className="grid grid-cols-4">
-      <div className="sticky top-0 col-span-1 flex h-dvh flex-col gap-16 overflow-hidden bg-white p-4">
-        <div className="mt-6 flex items-center justify-center gap-1.5 [&>svg]:h-[50px] [&>svg]:w-[55px]">
-          <AppLogoBlack />
-          <h1 className="text-center text-2xl font-bold">XEVEN QUIZ</h1>
+    <div className="flex items-start">
+      <Sidebar
+        questions={questions}
+        activeQuestion={activeQuestion}
+        totalQuestions={quizDetails.totalQuestions}
+      />
+
+      <PageCenter light justifyCenter>
+        <div
+          className={`relative mb-18 min-h-[500px] w-full rounded px-4 pt-4 pb-20 md:w-[900px] md:px-16 md:pt-8`}
+        >
+          <Question
+            question={question}
+            code={code}
+            image={image}
+            choices={choices}
+            type={type}
+            handleAnswerSelection={handleAnswerSelection}
+            selectedAnswer={selectedAnswer}
+          />
+          <div className="flex w-[90%] justify-center gap-5 md:w-auto">
+            <Button
+              text={activeQuestion === questions.length - 1 ? 'Finish' : 'Next'}
+              onClick={onClickNext}
+              icon={<RightArrowIcon />}
+              iconPosition="right"
+              disabled={selectedAnswer.length === 0}
+            />
+          </div>
         </div>
 
-        <CircularProgress
-          progress={((activeQuestion + 1) / quizDetails.totalQuestions) * 100}
-          content={`${addLeadingZero(activeQuestion + 1)}/${addLeadingZero(quizDetails.totalQuestions)}`}
-        />
-      </div>
-
-      <div className="col-span-3">
-        <PageCenter light justifyCenter>
-          <div
-            className={`relative mb-18 min-h-[500px] w-full rounded px-4 pt-4 pb-20 md:w-[900px] md:px-16 md:pt-8 ${selectedAnswer.length > 0}`}
-          >
-            <Question
-              question={question}
-              code={code}
-              image={image}
-              choices={choices}
-              type={type}
-              handleAnswerSelection={handleAnswerSelection}
-              selectedAnswer={selectedAnswer}
-            />
-            <div className="flex w-[90%] justify-center gap-5 md:w-auto">
-              <Button
-                text={activeQuestion === questions.length - 1 ? 'Finish' : 'Next'}
-                onClick={onClickNext}
-                icon={<RightArrowIcon />}
-                iconPosition="right"
-                disabled={selectedAnswer.length === 0}
-              />
-            </div>
-          </div>
-
-          {/* timer or finish quiz modal*/}
-          {(showTimerModal || showResultModal) && (
-            <ModalWrapper
-              title={showResultModal ? 'Done!' : 'Your time is up!'}
-              subtitle={`You have attempted ${result.length} questions in total.`}
-              onClick={handleModal}
-              icon={showResultModal ? <CheckIcon /> : <TimerIcon />}
-              buttonTitle="SHOW RESULT"
-            />
-          )}
-        </PageCenter>
-      </div>
+        {/* timer or finish quiz modal*/}
+        {(showTimerModal || showResultModal) && (
+          <ModalWrapper
+            title={showResultModal ? 'Done!' : 'Your time is up!'}
+            subtitle={`You have attempted ${result.length} questions in total.`}
+            onClick={handleModal}
+            icon={showResultModal ? <CheckIcon /> : <TimerIcon />}
+            buttonTitle="SHOW RESULT"
+          />
+        )}
+      </PageCenter>
     </div>
   )
 }
