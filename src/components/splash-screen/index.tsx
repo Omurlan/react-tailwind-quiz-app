@@ -29,7 +29,7 @@ const SplashScreen = () => {
   }, [])
 
   return (
-    <PageCenter justifyCenter>
+    <PageCenter theme justifyCenter>
       <LogoAnimation logoSize={logoSize}>
         <AppLogoBlack />
         <h1 className="text-[10px] font-bold">XEVEN QUIZ</h1>

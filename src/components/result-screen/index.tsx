@@ -20,7 +20,7 @@ const ResultScreen: FC = () => {
   }
 
   return (
-    <div className="mx-auto my-8 w-[90%] max-w-[900px] pt-10 md:my-16 md:w-auto md:pt-0">
+    <div className="mx-auto my-8 w-[90%] max-w-[900px] p-4 pt-10 md:my-16 md:w-auto md:pt-0">
       <div className="my-16 flex items-center justify-center gap-1.5 [&>svg]:h-[50px] [&>svg]:w-[55px]">
         <AppLogoBlack />
         <h1 className="text-center text-2xl font-bold">XEVEN QUIZ</h1>
@@ -52,7 +52,7 @@ const ResultScreen: FC = () => {
                     <h6 className="text-primary text-[clamp(16px,5vw,18px)] leading-[1.3] font-medium">
                       {`${index + 1}. `}
                     </h6>
-                    <span className="text-primary mb-[10px] text-[clamp(16px,5vw,18px)] leading-[1.3] font-medium md:mb-5">
+                    <span className="text-primary text-[clamp(16px,5vw,18px)] leading-[1.3] font-medium lg:mb-5">
                       {question}
                     </span>
                   </div>
@@ -69,18 +69,10 @@ const ResultScreen: FC = () => {
                           selectedAnswer.includes(ans) && !correctAnswers.includes(ans)
 
                         return (
-                          // <li
-                          //   key={ans}
-                          //   className={`text-secondary mt-[clamp(13px,calc(10px+6*((100vw-600px)/1320)),16px)] w-full rounded-2xl border p-4 text-[clamp(16px,5vw,18px)] font-normal md:w-[90%] md:font-semibold ${correct ? 'border-success bg-success-light' : wrong ? 'border-danger bg-danger-light' : 'border-border bg-white'} `}
-                          // >
-                          //   <span className="mr-[14px]">{label}.</span>
-                          //   {ans}
-                          // </li>
-
                           <div
                             className={`text-secondary mt-[clamp(13px,calc(10px+6*((100vw-600px)/1320)),16px)] border-b text-[clamp(16px,4vw,18px)] ${correct ? 'border-theme rounded bg-white font-semibold shadow-[0px_8px_8px_0px_#E7851A0D] transition-all duration-[200] ease-in' : wrong ? 'border-danger rounded font-semibold shadow-[0px_8px_8px_0px_#E7851A0D] transition-all duration-[200] ease-in' : 'border-border'}`}
                           >
-                            <label className="grid cursor-pointer grid-cols-[min-content_min-content_1fr] gap-2 p-4 text-lg">
+                            <label className="grid grid-cols-[min-content_min-content_1fr] gap-2 p-4 text-lg">
                               {type === 'MAQs' ? (
                                 <Checkbox
                                   name={ans}
@@ -111,7 +103,7 @@ const ResultScreen: FC = () => {
                   </div>
                 </div>
                 <span
-                  className={`mt-[10px] mr-[10px] justify-end font-medium md:mt-1 md:mr-0 md:justify-normal ${isMatch ? 'text-theme' : 'text-danger'}`}
+                  className={`m-4 justify-end text-center font-medium md:mt-1 md:mr-0 md:justify-normal ${isMatch ? 'text-theme' : 'text-danger'}`}
                 >{`Score ${isMatch ? score : 0}`}</span>
               </div>
             )

@@ -2,8 +2,10 @@ import { FC, useEffect, useState } from 'react'
 import { useQuiz } from '../../contexts/quiz-context'
 import useTimer from '../../hooks/useTimer'
 import { ScreenTypes } from '../../types'
-import { CheckIcon, RightArrowIcon, TimerIcon } from '../../utils/icons'
+import { addLeadingZero } from '../../utils/helpers'
+import { AppLogoBlack, CheckIcon, RightArrowIcon, TimerIcon } from '../../utils/icons'
 import Button from '../ui/button'
+import { CircularProgress } from '../ui/circular-progress'
 import ModalWrapper from '../ui/modal-wrapper'
 import PageCenter from '../ui/page-center'
 import Question from './question'
@@ -85,17 +87,31 @@ const QuestionScreen: FC = () => {
   useTimer(timer, quizDetails, setEndTime, setTimer, setShowTimerModal, showResultModal)
 
   return (
-    <div className="flex items-start">
+    <div className="grid grid-cols-1 items-start lg:grid-cols-[330px_1fr]">
       <Sidebar
         questions={questions}
         activeQuestion={activeQuestion}
         totalQuestions={quizDetails.totalQuestions}
       />
 
-      <PageCenter light justifyCenter>
+      <PageCenter justifyCenter>
+        {/* logo only for small screen  */}
+        <div className="mb-10 flex items-center justify-center gap-1.5 lg:hidden">
+          <AppLogoBlack width={60} height={55} />
+          <h1 className="text-center text-2xl font-bold">XEVEN QUIZ</h1>
+        </div>
+
         <div
-          className={`relative mb-18 min-h-[500px] w-full rounded px-4 pt-4 pb-20 md:w-[900px] md:px-16 md:pt-8`}
+          className={`relative mb-18 min-h-[500px] w-full rounded bg-white p-4 pb-10 md:px-16 md:pt-8 md:pb-20 lg:bg-transparent`}
         >
+          {/* progressbar only for small screen */}
+          <div className="mb-7 lg:hidden">
+            <CircularProgress
+              progress={((activeQuestion + 1) / quizDetails.totalQuestions) * 100}
+              content={`${addLeadingZero(activeQuestion + 1)}/${addLeadingZero(quizDetails.totalQuestions)}`}
+            />
+          </div>
+
           <Question
             question={question}
             code={code}

@@ -12,9 +12,9 @@ interface SidebarProps {
 
 const Sidebar: FC<SidebarProps> = ({ questions, activeQuestion, totalQuestions }) => {
   return (
-    <div className="sticky top-0 flex h-dvh w-[330px] flex-col gap-12 overflow-hidden bg-white p-6 backdrop-blur-sm [mask:linear-gradient(black,black,black,transparent)]">
-      <div className="mt-4 flex items-center justify-center gap-1.5 [&>svg]:h-[50px] [&>svg]:w-[55px]">
-        <AppLogoBlack />
+    <div className="sticky top-0 hidden h-dvh flex-col gap-12 overflow-hidden bg-white p-6 backdrop-blur-sm [mask:linear-gradient(black,black,black,transparent)] lg:flex">
+      <div className="mt-4 flex items-center justify-center gap-1.5">
+        <AppLogoBlack width={55} height={50} />
         <h1 className="text-center text-2xl font-bold">XEVEN QUIZ</h1>
       </div>
 

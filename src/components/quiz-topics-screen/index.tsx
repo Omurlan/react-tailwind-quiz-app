@@ -16,7 +16,7 @@ const QuizTopicsScreen: React.FC = () => {
   }
 
   return (
-    <PageCenter light>
+    <PageCenter justifyCenter light>
       <CenterCardContainer>
         <LogoContainer>
           <AppLogo />
@@ -34,7 +34,7 @@ const QuizTopicsScreen: React.FC = () => {
               key={title}
               onClick={() => !disabled && selectQuizTopic(title)}
               disabled={disabled}
-              className={`flex cursor-pointer items-center rounded-[10px] bg-white p-[10px] transition-colors duration-[400ms] ease-out [-webkit-tap-highlight-color:transparent] [tap-highlight-color:transparent] disabled:cursor-not-allowed disabled:bg-[#fbf4ecbc] md:px-[10px] md:py-[14px] md:[-webkit-tap-highlight-color:unset] md:[tap-highlight-color:unset] ${quizTopic === title ? 'border-theme border-2' : 'border-disabled-button border'}`}
+              className={`flex cursor-pointer items-center rounded-[10px] bg-white px-[10px] py-1 transition-colors duration-[400ms] ease-out [-webkit-tap-highlight-color:transparent] [tap-highlight-color:transparent] disabled:cursor-not-allowed disabled:bg-[#fbf4ecbc] md:px-[10px] md:py-[14px] md:[-webkit-tap-highlight-color:unset] md:[tap-highlight-color:unset] ${quizTopic === title ? 'border-theme border-2' : 'border-disabled-button border'}`}
             >
               {icon}
               <span className="ml-[10px] text-base font-normal md:text-lg md:font-semibold">

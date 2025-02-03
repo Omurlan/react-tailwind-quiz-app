@@ -32,7 +32,7 @@ const RadioButton: FC<RadioButtonProps> = ({
         disabled={disabled}
       />
       <span
-        className={`${red ? 'peer-checked:border-danger' : 'peer-checked:border-theme'} relative top-1 mr-1 inline-block size-5 rounded-full border border-[#CFD1D5] bg-white`}
+        className={`${red ? 'peer-checked:border-danger' : 'peer-checked:border-theme'} relative top-1 mr-1 inline-block size-5 rounded-full border border-[#CFD1D5] bg-white disabled:cursor-auto`}
       >
         <span
           className={`absolute top-1/2 left-1/2 h-3 w-3 -translate-x-1/2 -translate-y-1/2 rounded-full transition-opacity duration-200 ${!checked ? 'opacity-0' : red ? 'bg-danger opacity-100' : 'bg-theme opacity-100'}`}
