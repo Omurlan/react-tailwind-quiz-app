@@ -28,7 +28,7 @@ const Sidebar: FC<SidebarProps> = ({ questions, activeQuestion, totalQuestions }
           .filter((_, index) => index >= activeQuestion)
           .map(({ question }, index) => (
             <li
-              key={question}
+              key={index}
               className={`${index === 0 ? 'text-theme' : ''} list-decimal pl-1 text-base`}
             >
               {question}
