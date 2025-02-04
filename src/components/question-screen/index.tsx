@@ -1,9 +1,10 @@
 import { FC, useEffect, useState } from 'react'
+import AppLogoBlack from '../../assets/icons/app-logo-black.svg'
 import { useQuiz } from '../../contexts/quiz-context'
 import useTimer from '../../hooks/useTimer'
 import { ScreenTypes } from '../../types'
 import { addLeadingZero } from '../../utils/helpers'
-import { AppLogoBlack, CheckIcon, RightArrowIcon, TimerIcon } from '../../utils/icons'
+import { CheckIcon, RightArrowIcon, TimerIcon } from '../../utils/icons'
 import Button from '../ui/button'
 import { CircularProgress } from '../ui/circular-progress'
 import ModalWrapper from '../ui/modal-wrapper'
@@ -97,7 +98,7 @@ const QuestionScreen: FC = () => {
       <PageCenter justifyCenter>
         {/* logo only for small screen  */}
         <div className="mb-10 flex items-center justify-center gap-1.5 lg:hidden">
-          <AppLogoBlack width={60} height={55} />
+          <img src={AppLogoBlack} alt="logo" className="w-[60px]" />
           <h1 className="text-center text-2xl font-bold">XEVEN QUIZ</h1>
         </div>
 
