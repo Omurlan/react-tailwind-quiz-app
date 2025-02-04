@@ -92,7 +92,8 @@ const QuestionScreen: FC = () => {
       <Sidebar
         questions={questions}
         activeQuestion={activeQuestion}
-        totalQuestions={quizDetails.totalQuestions}
+        timer={timer}
+        quizDetails={quizDetails}
       />
 
       <PageCenter justifyCenter>
@@ -108,7 +109,8 @@ const QuestionScreen: FC = () => {
           {/* progressbar only for small screen */}
           <div className="mb-7 lg:hidden">
             <CircularProgress
-              progress={((activeQuestion + 1) / quizDetails.totalQuestions) * 100}
+              progress={(timer / quizDetails.totalTime) * 100}
+              timer={timer}
               content={`${addLeadingZero(activeQuestion + 1)}/${addLeadingZero(quizDetails.totalQuestions)}`}
             />
           </div>

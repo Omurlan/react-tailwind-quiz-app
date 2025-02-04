@@ -7,10 +7,19 @@ import { CircularProgress } from '../ui/circular-progress'
 interface SidebarProps {
   questions: Question[]
   activeQuestion: number
-  totalQuestions: number
+  quizDetails: {
+    totalQuestions: number
+    totalTime: number
+  }
+  timer: number
 }
 
-const Sidebar: FC<SidebarProps> = ({ questions, activeQuestion, totalQuestions }) => {
+const Sidebar: FC<SidebarProps> = ({
+  questions,
+  activeQuestion,
+  quizDetails: { totalQuestions, totalTime },
+  timer,
+}) => {
   return (
     <div className="sticky top-0 hidden h-dvh flex-col gap-12 overflow-hidden bg-white p-6 backdrop-blur-sm [mask:linear-gradient(black,black,black,transparent)] lg:flex">
       <div className="mt-4 flex items-center justify-center gap-1.5">
@@ -19,7 +28,8 @@ const Sidebar: FC<SidebarProps> = ({ questions, activeQuestion, totalQuestions }
       </div>
 
       <CircularProgress
-        progress={((activeQuestion + 1) / totalQuestions) * 100}
+        progress={(timer / totalTime) * 100}
+        timer={timer}
         content={`${addLeadingZero(activeQuestion + 1)}/${addLeadingZero(totalQuestions)}`}
       />
 
