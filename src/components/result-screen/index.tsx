@@ -20,7 +20,7 @@ const ResultScreen: FC = () => {
   }
 
   return (
-    <div className="mx-auto my-8 w-[90%] max-w-[900px] p-4 pt-10 md:my-16 md:w-auto md:pt-0">
+    <div className="bg-secondary-bg mx-auto my-8 w-[90%] max-w-[900px] p-4 pt-10 md:my-16 md:w-auto md:pt-0">
       <div className="my-16 flex items-center justify-center gap-1.5">
         <AppLogoBlack width={55} height={50} />
         <h1 className="text-center text-2xl font-bold">XEVEN QUIZ</h1>

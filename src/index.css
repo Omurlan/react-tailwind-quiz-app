@@ -11,7 +11,7 @@
   --color-dark: #282526;
   --color-dark-grey: #9fa3a9;
   --color-darker-grey: #817a8e;
-  --color-secondary-bg: #f2f2f2;
+  --color-secondary-bg: #fbfbfd;
   --color-success: #12b40e;
   --color-success-light: #ddffdc;
   --color-danger: #ff143e;
@@ -33,7 +33,7 @@ body {
   font-family: 'Anek Malayalam', sans-serif;
   font-size: 1rem;
   color: black;
-  background: #e5e5e5;
+  background: #fbfbfd;
   line-height: 1;
   position: relative;
 }

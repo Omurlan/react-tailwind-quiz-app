@@ -10,7 +10,7 @@ interface PageCenterProps {
 const PageCenter: FC<PageCenterProps> = ({ light, theme, justifyCenter, children }) => {
   return (
     <div
-      className={`${light ? 'bg-secondary-bg' : theme ? 'theme-gradient' : 'theme-gradient lg:from-secondary-bg lg:to-secondary-bg lg:bg-linear-to-r'} flex min-h-screen flex-col items-center p-5 pt-12 ${justifyCenter ? 'justify-center' : ''}`}
+      className={`${light ? 'bg-secondary-bg' : theme ? 'theme-gradient' : 'theme-gradient lg:bg-linear-to-r lg:from-[#F2F2F2] lg:to-[#F2F2F2]'} flex min-h-screen flex-col items-center p-5 pt-12 ${justifyCenter ? 'justify-center' : ''}`}
     >
       {children}
     </div>
