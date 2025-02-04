@@ -21,8 +21,8 @@ const ResultScreen: FC = () => {
 
   return (
     <div className="mx-auto my-8 w-[90%] max-w-[900px] p-4 pt-10 md:my-16 md:w-auto md:pt-0">
-      <div className="my-16 flex items-center justify-center gap-1.5 [&>svg]:h-[50px] [&>svg]:w-[55px]">
-        <AppLogoBlack />
+      <div className="my-16 flex items-center justify-center gap-1.5">
+        <AppLogoBlack width={55} height={50} />
         <h1 className="text-center text-2xl font-bold">XEVEN QUIZ</h1>
       </div>
       <div className="bg-card mx-auto mb-10 rounded-sm p-4 md:px-[90px] md:pt-10 md:pb-[90px]">
