@@ -24,7 +24,7 @@ const Sidebar: FC<SidebarProps> = ({
     <div className="sticky top-0 hidden h-dvh flex-col gap-12 overflow-hidden bg-white p-6 backdrop-blur-sm [mask:linear-gradient(black,black,black,transparent)] lg:flex">
       <div className="mt-4 flex items-center justify-center gap-1.5">
         <AppLogoBlack width={55} height={50} />
-        <h1 className="text-center text-2xl font-bold">XEVEN QUIZ</h1>
+        <h1 className="text-center text-2xl font-bold">FLEXY QUIZ</h1>
       </div>
 
       <CircularProgress

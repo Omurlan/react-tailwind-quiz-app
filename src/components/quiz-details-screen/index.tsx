@@ -22,9 +22,9 @@ const QuizDetailsScreen = () => {
     <PageCenter light justifyCenter>
       <CenterCardContainer>
         <LogoContainer>
-          <AppLogo width={220}/>
+          <AppLogo width={220} />
         </LogoContainer>
-        <h2 className="text-theme text-[32px] font-bold">XEVEN QUIZ</h2>
+        <h2 className="text-theme text-[32px] font-bold">FLEXY QUIZ</h2>
         <div className="mt-4 mb-10 max-w-[500px] text-center text-xl font-medium">
           <div className="mt-4 text-xl leading-[1.3] font-medium"></div>
 

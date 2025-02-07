@@ -19,10 +19,10 @@ const QuizTopicsScreen: React.FC = () => {
     <PageCenter justifyCenter light>
       <CenterCardContainer>
         <LogoContainer>
-          <AppLogo width={220}/>
+          <AppLogo width={220} />
         </LogoContainer>
         <h2 className="mb-5 text-center text-[32px] font-bold">
-          WELCOME TO <HighlightedText>XEVEN QUIZ</HighlightedText>
+          WELCOME TO <HighlightedText>FLEXY QUIZ</HighlightedText>
         </h2>
         <p className="text-center text-xl leading-7 font-medium">
           Select topic below to start your Quiz.

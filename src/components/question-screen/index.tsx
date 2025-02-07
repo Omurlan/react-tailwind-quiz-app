@@ -100,7 +100,7 @@ const QuestionScreen: FC = () => {
         {/* logo only for small screen  */}
         <div className="mb-10 flex items-center justify-center gap-1.5 lg:hidden">
           <img src={AppLogoBlack} alt="logo" className="w-[60px]" />
-          <h1 className="text-center text-2xl font-bold">XEVEN QUIZ</h1>
+          <h1 className="text-center text-2xl font-bold">FLEXY QUIZ</h1>
         </div>
 
         <div

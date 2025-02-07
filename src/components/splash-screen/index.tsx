@@ -32,7 +32,7 @@ const SplashScreen = () => {
     <PageCenter theme justifyCenter>
       <LogoAnimation logoSize={logoSize}>
         <AppLogoBlack />
-        <h1 className="text-[10px] font-bold">XEVEN QUIZ</h1>
+        <h1 className="text-[10px] font-bold">FLEXY QUIZ</h1>
       </LogoAnimation>
     </PageCenter>
   )
