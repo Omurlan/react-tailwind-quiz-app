@@ -28,7 +28,7 @@ const Sidebar: FC<SidebarProps> = ({
       </div>
 
       <CircularProgress
-        progress={(timer / totalTime) * 100}
+        progress={100 - (timer / totalTime) * 100}
         timer={timer}
         content={`${addLeadingZero(activeQuestion + 1)}/${addLeadingZero(totalQuestions)}`}
       />

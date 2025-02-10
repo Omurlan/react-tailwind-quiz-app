@@ -109,7 +109,7 @@ const QuestionScreen: FC = () => {
           {/* progressbar only for small screen */}
           <div className="mb-7 lg:hidden">
             <CircularProgress
-              progress={(timer / quizDetails.totalTime) * 100}
+              progress={100 - (timer / quizDetails.totalTime) * 100}
               timer={timer}
               content={`${addLeadingZero(activeQuestion + 1)}/${addLeadingZero(quizDetails.totalQuestions)}`}
             />
