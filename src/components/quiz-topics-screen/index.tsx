@@ -25,7 +25,7 @@ const QuizTopicsScreen: React.FC = () => {
           WELCOME TO <HighlightedText>FLEXY QUIZ</HighlightedText>
         </h2>
         <p className="text-center text-xl leading-7 font-medium">
-          Select topic below to start your Quiz.
+          Select topic below to start your Quiz
         </p>
 
         <div className="mt-10 mb-11 flex max-w-full flex-wrap justify-center gap-5 md:max-w-[60%] md:gap-8">
