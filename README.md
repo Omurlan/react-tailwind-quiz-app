@@ -23,6 +23,6 @@
 
 ![Flexy Quiz - Question screen UI with image ](https://ik.imagekit.io/cpnw7c0xpe/Tailwind%20Components/Templates/Flexy%20Quiz%20-%20Question%20Screen%20with%20image.png?updatedAt=1739793293327)
 
-## Another Variant
+## Styled Components Variant
 
 Looking for a **Styled Components** version? Check out GitHub Repo of [Xeven Quiz](https://github.com/AbdulBasit313/React-Quiz-App-Template) – built with **React** and **Styled Components** for a sleek and dynamic UI. Here is the [demo of Xeven Quiz](https://xeven-quiz.vercel.app/).
