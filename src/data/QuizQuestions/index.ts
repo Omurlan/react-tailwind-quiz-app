@@ -31,7 +31,7 @@ export type Topic = {
   questions: Question[]
 }
 
-export const quiz = {
+export const quiz: Record<string, Topic> = {
   'Информационные технологии в юридической деятельности': it,
   JavaScript: javascript,
   React: react,

@@ -1,7 +1,6 @@
 import { FC } from 'react'
 import { Question } from '../../data/QuizQuestions'
 import { addLeadingZero } from '../../utils/helpers'
-import { AppLogoBlack } from '../../utils/icons'
 import { CircularProgress } from '../ui/circular-progress'
 import Button from '../ui/button.tsx'
 import { ScreenTypes } from '../../types'

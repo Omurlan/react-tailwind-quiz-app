@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 
-import { AppLogoBlack } from '../../utils/icons'
 import LogoAnimation from '../ui/logo-animation'
 import PageCenter from '../ui/page-center'
 

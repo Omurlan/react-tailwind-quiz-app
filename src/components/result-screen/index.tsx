@@ -3,7 +3,7 @@ import { FC } from 'react'
 import { refreshPage } from '../../utils/helpers'
 
 import { useQuiz } from '../../contexts/quiz-context'
-import { AppLogoBlack, Refresh } from '../../utils/icons'
+import { Refresh } from '../../utils/icons'
 import Button from '../ui/button'
 import Checkbox from '../ui/checkbox'
 import CodeSnippet from '../ui/code-snippet'
