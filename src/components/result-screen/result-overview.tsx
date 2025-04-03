@@ -9,7 +9,7 @@ interface ResultOverviewProps {
 }
 
 const ResultOverview: FC<ResultOverviewProps> = ({ result }) => {
-  const { quizDetails, endTime } = useQuiz()
+  const { quizDetails, questions, endTime } = useQuiz()
 
   const totalQuestionAttempted = result.length
 
@@ -19,24 +19,24 @@ const ResultOverview: FC<ResultOverviewProps> = ({ result }) => {
 
   // Passed if 60 or more than 60% marks
   const calculateStatus =
-    (obtainedScore / quizDetails.totalScore) * 100 >= 60 ? 'Passed' : 'Failed'
+    (obtainedScore / quizDetails.totalScore) * 100 >= 60 ? 'удача!' : 'неудача'
 
   return (
     <div className="md:16 mb-8 space-y-3 text-center text-lg font-medium">
       <p>
-        You attempted questions:{' '}
+        Отвеченных вопросов:{' '}
         <HighlightedText>{totalQuestionAttempted.toString()}</HighlightedText> /{' '}
         {quizDetails.totalQuestions}
       </p>
       <p>
-        Score secured: <HighlightedText>{obtainedScore.toString()}</HighlightedText> /{' '}
-        {quizDetails.totalScore}
+        Набрано баллов: <HighlightedText>{obtainedScore.toString()}</HighlightedText> /{' '}
+        {questions.reduce((acc, q) => (acc += q.score), 0)}
       </p>
       <p>
-        Time Spent: <HighlightedText>{convertSeconds(endTime)}</HighlightedText>
+        Потрачено времени: <HighlightedText>{convertSeconds(endTime)}</HighlightedText>
       </p>
       <p>
-        Status: <HighlightedText>{calculateStatus}</HighlightedText>
+        Статус: <HighlightedText>{calculateStatus}</HighlightedText>
       </p>
     </div>
   )

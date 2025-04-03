@@ -1,5 +1,4 @@
 import { FC, useEffect, useState } from 'react'
-import AppLogoBlack from '../../assets/icons/app-logo-black.svg'
 import { useQuiz } from '../../contexts/quiz-context'
 import useTimer from '../../hooks/useTimer'
 import { ScreenTypes } from '../../types'
@@ -99,8 +98,9 @@ const QuestionScreen: FC = () => {
       <PageCenter justifyCenter>
         {/* logo only for small screen  */}
         <div className="mb-10 flex items-center justify-center gap-1.5 lg:hidden">
-          <img src={AppLogoBlack} alt="logo" className="w-[60px]" />
-          <h1 className="text-center text-2xl font-bold">FLEXY QUIZ</h1>
+          <h1 className="text-center text-2xl font-bold">
+            Информационные технологии в юридической деятельности
+          </h1>
         </div>
 
         <div
@@ -124,9 +124,10 @@ const QuestionScreen: FC = () => {
             handleAnswerSelection={handleAnswerSelection}
             selectedAnswer={selectedAnswer}
           />
-          <div className="flex w-[90%] justify-center gap-5 md:w-auto">
+
+          <div className="flex justify-center">
             <Button
-              text={activeQuestion === questions.length - 1 ? 'Finish' : 'Next'}
+              text={activeQuestion === questions.length - 1 ? 'Завершить' : 'Дальше'}
               onClick={onClickNext}
               icon={<RightArrowIcon />}
               iconPosition="right"
@@ -138,11 +139,11 @@ const QuestionScreen: FC = () => {
         {/* timer or finish quiz modal*/}
         {(showTimerModal || showResultModal) && (
           <ModalWrapper
-            title={showResultModal ? 'Done!' : 'Your time is up!'}
-            subtitle={`You have attempted ${result.length} questions in total.`}
+            title={showResultModal ? 'Завершено!' : 'Время вышло!'}
+            subtitle={`Вы ответили на ${result.length} вопросов.`}
             onClick={handleModal}
             icon={showResultModal ? <CheckIcon /> : <TimerIcon />}
-            buttonTitle="SHOW RESULT"
+            buttonTitle="К результату"
           />
         )}
       </PageCenter>

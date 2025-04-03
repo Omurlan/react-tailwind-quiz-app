@@ -3,6 +3,9 @@ import { Question } from '../../data/QuizQuestions'
 import { addLeadingZero } from '../../utils/helpers'
 import { AppLogoBlack } from '../../utils/icons'
 import { CircularProgress } from '../ui/circular-progress'
+import Button from '../ui/button.tsx'
+import { ScreenTypes } from '../../types'
+import { useQuiz } from '../../contexts/quiz-context.ts'
 
 interface SidebarProps {
   questions: Question[]
@@ -20,17 +23,39 @@ const Sidebar: FC<SidebarProps> = ({
   quizDetails: { totalQuestions, totalTime },
   timer,
 }) => {
+  const { setCurrentScreen } = useQuiz()
+
   return (
     <div className="sticky top-0 hidden h-dvh flex-col gap-12 overflow-hidden bg-white p-6 backdrop-blur-sm [mask:linear-gradient(black,black,black,transparent)] lg:flex">
-      <div className="mt-4 flex items-center justify-center gap-1.5">
-        <AppLogoBlack width={55} height={50} />
-        <h1 className="text-center text-2xl font-bold">FLEXY QUIZ</h1>
-      </div>
-
       <CircularProgress
         progress={100 - (timer / totalTime) * 100}
         timer={timer}
         content={`${addLeadingZero(activeQuestion + 1)}/${addLeadingZero(totalQuestions)}`}
+      />
+
+      <Button
+        outline
+        text="Выйти"
+        icon={
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            className="size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0 3-3m0 0-3-3m3 3H9"
+            />
+          </svg>
+        }
+        iconPosition="left"
+        onClick={() => {
+          setCurrentScreen(ScreenTypes.QuizDetailsScreen)
+        }}
       />
 
       <ol start={activeQuestion + 1} className="space-y-2 px-4">

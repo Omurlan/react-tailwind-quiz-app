@@ -18,6 +18,10 @@ type QuizTopic = {
 
 export const quizTopics: QuizTopic[] = [
   {
+    title: 'Информационные технологии в юридической деятельности',
+    icon: <ReactIcon />,
+  },
+  {
     title: 'React',
     icon: <ReactIcon />,
   },

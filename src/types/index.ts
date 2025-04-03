@@ -7,6 +7,7 @@ export enum ScreenTypes {
   QuizDetailsScreen,
   QuestionScreen,
   ResultScreen,
+  AboutScreen,
 }
 
 export type QuizContextTypes = {

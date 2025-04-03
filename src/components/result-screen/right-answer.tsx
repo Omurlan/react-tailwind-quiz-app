@@ -8,7 +8,7 @@ interface RightAnswerProps {
 const RightAnswer: FC<RightAnswerProps> = ({ correctAnswers, choices }) => {
   return (
     <p className="text-darker-grey mt-4 text-lg leading-[1.2]">
-      {`Right ${correctAnswers.length < 2 ? 'Answer' : 'Answers'}: `}
+      {`Правильный ${correctAnswers.length < 2 ? 'ответ' : 'Answers'}: `}
       {correctAnswers.map((item: string, index: number) => {
         const label = String.fromCharCode(65 + choices.indexOf(item))
 

@@ -2,6 +2,7 @@ import { generalKnowledge } from './generalKnowledge'
 import { javascript } from './javascript'
 import { python } from './python'
 import { react } from './react'
+import { it } from './it'
 
 // Question Types
 // 1. MCQs | Multiple Choice | single
@@ -30,7 +31,8 @@ export type Topic = {
   questions: Question[]
 }
 
-export const quiz: Record<string, Topic> = {
+export const quiz = {
+  'Информационные технологии в юридической деятельности': it,
   JavaScript: javascript,
   React: react,
   Python: python,

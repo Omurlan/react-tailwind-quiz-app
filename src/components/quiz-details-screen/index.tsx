@@ -6,49 +6,58 @@ import { AppLogo, StartIcon } from '../../utils/icons'
 import Button from '../ui/button'
 import CenterCardContainer from '../ui/center-card-container'
 import HighlightedText from '../ui/highlighted-text'
-import LogoContainer from '../ui/logo-container'
 import PageCenter from '../ui/page-center'
 
 const QuizDetailsScreen = () => {
-  const { setCurrentScreen, quizDetails } = useQuiz()
+  const { setCurrentScreen, quizDetails, questions } = useQuiz()
 
-  const { selectedQuizTopic, totalQuestions, totalScore, totalTime } = quizDetails
+  const { selectedQuizTopic, totalTime } = quizDetails
 
   const goToQuestionScreen = () => {
     setCurrentScreen(ScreenTypes.QuestionScreen)
   }
 
+  const goToAboutScreen = () => {
+    setCurrentScreen(ScreenTypes.AboutScreen)
+  }
+
   return (
     <PageCenter light justifyCenter>
       <CenterCardContainer>
-        <LogoContainer>
-          <AppLogo width={220} />
-        </LogoContainer>
-        <h2 className="text-theme text-[32px] font-bold">FLEXY QUIZ</h2>
-        <div className="mt-4 mb-10 max-w-[500px] text-center text-xl font-medium">
+        {/*<LogoContainer>*/}
+        {/*  <AppLogo width={220} />*/}
+        {/*</LogoContainer>*/}
+        <h2 className="text-theme text-[32px] font-bold">ТЕСТИРОВАНИЕ</h2>
+        <div className="mt-4 mb-10 max-w-[500px] text-xl font-medium">
           <div className="mt-4 text-xl leading-[1.3] font-medium"></div>
 
           <DetailText>
-            Selected Quiz Topic: <HighlightedText>{selectedQuizTopic}</HighlightedText>
+            Тема: <HighlightedText>{selectedQuizTopic}</HighlightedText>
           </DetailText>
           <DetailText>
-            Total questions to attempt:{' '}
-            <HighlightedText>{totalQuestions}</HighlightedText>
+            Количество вопросов: <HighlightedText>{questions.length}</HighlightedText>
           </DetailText>
           <DetailText>
-            Score in total: <HighlightedText>{totalScore}</HighlightedText>
-          </DetailText>
-          <DetailText>
-            Total time: <HighlightedText>{convertSeconds(totalTime)}</HighlightedText>
+            Время на тест: <HighlightedText>{convertSeconds(totalTime)}</HighlightedText>
           </DetailText>
         </div>
-        <Button
-          text="Start"
-          icon={<StartIcon />}
-          iconPosition="left"
-          onClick={goToQuestionScreen}
-          bold
-        />
+
+        <div className="flex gap-4">
+          <Button
+            outline
+            text="О нас"
+            iconPosition="left"
+            onClick={goToAboutScreen}
+            bold
+          />
+          <Button
+            text="Начать"
+            icon={<StartIcon />}
+            iconPosition="left"
+            onClick={goToQuestionScreen}
+            bold
+          />
+        </div>
       </CenterCardContainer>
     </PageCenter>
   )

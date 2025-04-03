@@ -21,10 +21,10 @@ const ResultScreen: FC = () => {
 
   return (
     <div className="bg-secondary-bg mx-auto my-8 w-[90%] max-w-[900px] p-4 pt-10 md:my-16 md:w-auto md:pt-0">
-      <div className="my-16 flex items-center justify-center gap-1.5">
-        <AppLogoBlack width={55} height={50} />
-        <h1 className="text-center text-2xl font-bold">FLEXY QUIZ</h1>
-      </div>
+      {/*<div className="my-16 flex items-center justify-center gap-1.5">*/}
+      {/*  <AppLogoBlack width={55} height={50} />*/}
+      {/*  <h1 className="text-center text-2xl font-bold">FLEXY QUIZ</h1>*/}
+      {/*</div>*/}
       <div className="bg-card mx-auto mb-10 rounded-sm p-4 md:px-[90px] md:pt-10 md:pb-[90px]">
         <ResultOverview result={result} />
         {result.map(
@@ -96,7 +96,7 @@ const ResultScreen: FC = () => {
                         )
                       })}
                     </ul>
-                    {/* only show if the answer is wrong */}
+                    {/*only show if the answer is wrong*/}
                     {!isMatch && (
                       <RightAnswer correctAnswers={correctAnswers} choices={choices} />
                     )}
@@ -104,7 +104,7 @@ const ResultScreen: FC = () => {
                 </div>
                 <span
                   className={`m-4 justify-end text-center font-medium md:mt-1 md:mr-0 md:justify-normal ${isMatch ? 'text-theme' : 'text-danger'}`}
-                >{`Score ${isMatch ? score : 0}`}</span>
+                >{`Баллов ${isMatch ? score : 0}`}</span>
               </div>
             )
           },
@@ -113,7 +113,7 @@ const ResultScreen: FC = () => {
 
       <div className="flex items-center justify-end">
         <Button
-          text="RETRY"
+          text="Заново"
           onClick={onClickRetry}
           icon={<Refresh />}
           iconPosition="left"
